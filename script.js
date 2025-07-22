@@ -63,7 +63,7 @@ function searchDonors() {
         card.innerHTML = `
           <div class="text-lg font-semibold text-red-800">${donor.name} (${donor.subtype})</div>
           <div>📍 <span class="font-medium">${donor.location}</span></div>
-          <div>📞 <span>${donor.contact}</span></div>
+          <div>📞 +880<span>${donor.contact}</span></div>
           <div>✅ <span class="text-green-700 font-medium">Available: ${donor.availability}</span></div>
           <div>💉 Last Donated: ${donor.lastDonated || "N/A"}</div>
           <div>🗓️ Registered: ${donor.registeredAt}</div>
