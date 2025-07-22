@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donor Connect – Plasma & Platelet</title>
+  <script defer src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #e0f2fe, #fdf2f8);
+    }
+  </style>
+</head>
+<body class="text-gray-900 min-h-screen font-sans">
+
+  <header class="bg-red-600 text-white py-4 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">🩸 Donor Connect</h1>
+      <span class="italic">Plasma & Platelet Donors</span>
+    </div>
+  </header>
+
+  <!-- Registration Form -->
+  <section class="max-w-3xl mx-auto mt-8 bg-white p-6 rounded-xl shadow-lg">
+    <h2 class="text-xl font-bold text-center mb-4 text-red-700">📋 Donor Registration</h2>
+    <form id="donorForm" class="grid gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <select name="type" id="type" class="p-3 border border-gray-300 rounded-lg" required>
+          <option value="">Donor Type</option>
+          <option value="Plasma">Plasma</option>
+          <option value="Platelet">Platelet</option>
+        </select>
+
+        <select name="subtype" id="subtype" class="p-3 border border-gray-300 rounded-lg" required>
+          <option value="">Select Subtype</option>
+        </select>
+      </div>
+
+      <input type="text" name="name" placeholder="Full Name" class="p-3 border border-gray-300 rounded-lg" required />
+      <input type="text" name="location" placeholder="Location (e.g. Dhaka, Chattogram)" class="p-3 border border-gray-300 rounded-lg" required />
+
+      <input type="text" name="phone" placeholder="Phone Number (optional)" class="p-3 border border-gray-300 rounded-lg" />
+      <input type="url" name="socialMedia" placeholder="Social Media (Required for females if phone not shared)" class="p-3 border border-gray-300 rounded-lg" />
+
+      <select name="availability" class="p-3 border border-gray-300 rounded-lg" required>
+        <option value="">Available to Donate?</option>
+        <option value="Yes">✅ Yes</option>
+        <option value="No">❌ No</option>
+      </select>
+
+      <input type="date" name="lastDonated" class="p-3 border border-gray-300 rounded-lg" />
+
+      <button type="submit" class="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition">
+        ➕ Register Donor
+      </button>
+    </form>
+  </section>
+
+  <!-- Search Section -->
+  <section class="max-w-3xl mx-auto mt-10 bg-white p-6 rounded-xl shadow-lg mb-10">
+    <h2 class="text-xl font-bold text-center mb-4 text-red-700">🔍 Search Donors</h2>
+    <div class="flex gap-2 flex-col sm:flex-row">
+      <select id="searchType" class="p-3 border border-gray-300 rounded-lg w-full">
+        <option value="">Select Donor Type</option>
+        <option value="Plasma">Plasma</option>
+        <option value="Platelet">Platelet</option>
+      </select>
+      <button onclick="searchDonors()" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+        🔎 Search
+      </button>
+    </div>
+
+    <div id="results" class="mt-6 space-y-4"></div>
+  </section>
+
+<footer class="text-center text-sm text-gray-600 py-4">
+  &copy; 2025 Donor Connect • Made with <strong>Bridge Byte Tech</strong><br/>
+  by In memory of the victims of the <strong>Milestone School & College tragedy</strong> 🕊️
+</footer>
+
+</body>
+</html>
